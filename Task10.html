@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            position: relative;
+        }
+        .box{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #fff;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            transition: all ease 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <script>
+        // const box = document.querySelector(".box");
+        // const body = document.querySelector("body");
+
+        // body.addEventListener("mousemove",function(e){
+        //     box.style.left = `${e.x}px`;
+        //     box.style.top = `${e.y}px`;
+
+        //     // box.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`
+        // })
+
+        const box = document.querySelector(".box");
+        const body = document.querySelector("body");
+
+        body.addEventListener("mousemove", function (e) {
+            const boxWidth = box.offsetWidth;
+            const boxHeight = box.offsetHeight;
+
+            // Adjust position to avoid overflow
+            let left = e.x - boxWidth / 2;
+            let top = e.y - boxHeight / 2;
+
+            // Constrain within viewport
+            left = Math.max(0, Math.min(left, window.innerWidth - boxWidth));
+            top = Math.max(0, Math.min(top, window.innerHeight - boxHeight));
+
+            box.style.left = `${left}px`;
+            box.style.top = `${top}px`;
+        });
+    </script>
+</body>
+</html>

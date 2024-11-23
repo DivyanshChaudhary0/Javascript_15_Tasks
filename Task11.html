@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Menu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        /* Hamburger Icon */
+        .hamburger {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 24px;
+            width: 30px;
+        }
+        .hamburger div {
+            height: 4px;
+            width: 100%;
+            background-color: white;
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+        /* Navigation Menu */
+        .nav-links {
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: #444;
+            list-style: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: none; /* Initially hidden */
+            flex-direction: column;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 0;
+        }
+        .nav-links a:hover {
+            color: #ff9800;
+        }
+        /* Active Styles for Hamburger */
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        /* Show Navigation Menu */
+        .nav-links.show {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">MySite</div>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            // Toggle active class for hamburger animation
+            hamburger.classList.toggle('active');
+            // Toggle show class to display/hide nav menu
+            navLinks.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        body{
+            display: flex;
+            gap: 30px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        p{
+            width: 50%;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga, tempora eius. Placeat autem explicabo, aspernatur modi reprehenderit velit doloribus aliquid adipisci delectus blanditiis? Rem sapiente magnam recusandae veritatis ratione animi perspiciatis. Explicabo est consequatur laborum, provident molestias perferendis, corrupti voluptatibus quas amet harum reiciendis architecto qui! Necessitatibus nisi provident nesciunt?</p>
+
+    <script>
+        const p = document.querySelector("p");
+
+        p.addEventListener("mouseover",function(){
+            p.style.fontSize = "35px";
+        })
+        p.addEventListener("mouseout",function(){
+            p.style.fontSize = "30px";
+        })
+    </script>
+</body>
+</html>
